@@ -1,0 +1,165 @@
+  /*-----------*/
+ /* VARIAVEIS */
+/*-----------*/
+:root {
+  --formulario-lista-bi-2-margem-1: 7.5px;
+  --formulario-lista-bi-2-margem-2: 15px;
+
+  --formulario-lista-bi-altura: 450px;
+  --formulario-lista-bi-largura: 300px;
+  --formulario-lista-bi-borda-cor:#F2F2F2;
+  --formulario-lista-bi-cor-fundo: #FFFFFF;
+  --formulario-lista-bi-borda-tamanho: 1px;
+  --formulario-lista-bi-preenchimento: 20px;
+  --formulario-lista-bi-borda-curvatura: 12px;
+
+  --formulario-lista-bi-caixa-de-imagem-margens-1: 40px 5px 0 0;
+  --formulario-lista-bi-caixa-de-imagem-margens-2: 5px 0 50px 0;
+
+  --formulario-lista-bi-caixa-de-rotulo-tipo_de_letra: uppercase;
+
+  --formulario-lista-bi-caixa-de-rotulo-cor: #FFFFFF;
+  --formulario-lista-bi-caixa-de-rotulo-altura: 50px;
+  --formulario-lista-bi-caixa-de-rotulo-cor-fundo: #818183;
+
+  --formulario-lista-bi-caixa-de-botao-margens: auto;
+
+  --formulario-lista-bi-caixa-de-codigo-de-barras-margens: auto;
+
+  --formulario-lista-bi-caixa-de-botao-lista-bi-margem-de-baixo: 10px;
+}
+
+  /*---------------------*/
+ /* FORMULARIO LISTA BI */
+/*---------------------*/
+.CrachaVerso,
+.CrachaFrente {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  box-shadow: var(--sombra);
+  height: var(--formulario-lista-bi-altura);
+  width: var(--formulario-lista-bi-largura);
+  margin: 0 var(--formulario-lista-bi-2-margem-1) 0 var(--formulario-lista-bi-2-margem-2);
+  padding: var(--formulario-lista-bi-preenchimento);
+  background-color: var(--formulario-lista-bi-cor-fundo);
+  border-radius: var(--formulario-lista-bi-borda-curvatura);
+  border: var(--formulario-lista-bi-borda-tamanho) var(--tipo-de-borda) var(--formulario-lista-bi-borda-cor);
+}
+
+.CrachaVerso {
+  z-index: 1;
+  position: absolute;
+  transform: translate(calc(50% * -1));
+  top: calc(50% - (var(--formulario-lista-bi-altura) / 2));
+}
+
+.CrachaVerso,
+.CrachaFrente {
+  backface-visibility: hidden;
+  transition: var(--transicao-tipo) var(--transicao-velocidade) var(--transicao-funcao-de-tempo);
+}
+
+.CrachaVerso {
+  transform: rotateY(-180deg);
+}
+
+.Cracha .GirarFrente {
+  transform: rotateY(180deg);
+}
+
+.Cracha .GirarVerso {
+  transform: rotateY(0deg);
+}
+
+.ListaBI {
+  overflow: auto;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  box-shadow: var(--sombra);
+  height: var(--formulario-lista-bi-altura);
+  width: var(--formulario-lista-bi-largura);
+  margin: 0 var(--formulario-lista-bi-2-margem-2) 0 var(--formulario-lista-bi-2-margem-1);
+  padding: var(--formulario-lista-bi-preenchimento);
+  background-color: var(--formulario-lista-bi-cor-fundo);
+  border-radius: var(--formulario-lista-bi-borda-curvatura);
+  border: var(--formulario-lista-bi-borda-tamanho) var(--tipo-de-borda) var(--formulario-lista-bi-borda-cor);
+}
+
+  /*-----------------*/
+ /* CAIXA DE IMAGEM */
+/*-----------------*/
+.CaixaDeImagem .banner-cptCaixas {
+  margin: var(--formulario-lista-bi-caixa-de-imagem-margens-1);
+}
+
+.CaixaDeImagem:nth-child(2) {
+  display: flex;
+  align-items: center;
+
+  margin: var(--formulario-lista-bi-caixa-de-imagem-margens-2);
+}
+
+  /*-----------------*/
+ /* CAIXA DE ROTULO */
+/*-----------------*/
+.CaixaDeRotulo {
+  text-transform: var(--formulario-lista-bi-caixa-de-rotulo-tipo_de_letra);
+}
+
+.CrachaFrente .CaixaDeRotulo {
+  width: var(--formulario-lista-bi-largura);
+  color: var(--formulario-lista-bi-caixa-de-rotulo-cor);
+  height: var(--formulario-lista-bi-caixa-de-rotulo-altura);
+  background-color: var(--formulario-lista-bi-caixa-de-rotulo-cor-fundo);
+}
+
+  /*----------------*/
+ /* CAIXA DE BOTAO */
+/*----------------*/
+.CrachaFrente .CaixaDeBotaoAnimado {
+  margin-top: var(--formulario-lista-bi-caixa-de-botao-margens);
+}
+
+.ListaBI .CaixaDeBotaoComLink {
+  margin-bottom: var(--formulario-lista-bi-caixa-de-botao-lista-bi-margem-de-baixo);
+}
+
+.ListaBI .CaixaDeBotaoComLink:last-child {
+  margin-bottom: calc(0 * var(--formulario-lista-bi-caixa-de-botao-lista-bi-margem-de-baixo));
+}
+
+  /*---------------------------*/
+ /* CAIXA DE CODIGO DE BARRAS */
+/*---------------------------*/
+.CaixaDeCodigoDeBarras {
+  margin-top: var(--formulario-lista-bi-caixa-de-codigo-de-barras-margens);
+}
+
+  /*----------------*/
+ /* REPSONSIVIDADE */
+/*----------------*/
+@media only screen and (max-width: 644px) {
+  body,
+  .Cracha {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .CrachaVerso,
+  .CrachaFrente {
+    margin: var(--formulario-lista-bi-2-margem-2) 0 var(--formulario-lista-bi-2-margem-1) 0;
+  }
+
+  .CrachaVerso {
+    top: 0;
+  }
+
+  .ListaBI {
+    margin: var(--formulario-lista-bi-2-margem-1) 0 var(--formulario-lista-bi-2-margem-2) 0;
+  }
+}

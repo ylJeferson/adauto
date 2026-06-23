@@ -1,0 +1,30 @@
+  /*-----------*/
+ /* VARIAVEIS */
+/*-----------*/
+:root {
+  --formulario-power-bi-botao-voltar-indice: 9999;
+  --formulario-power-bi-botao-voltar-distancia: 20px;
+  --formulario-power-bi-botao-voltar-posicao: absolute;
+
+  --formulario-power-bi-borda: none;
+  --formulario-power-bi-largura: 100%;
+  --formulario-power-bi-altura: 100vh;
+  --formulario-power-bi-esconder-rodape: polygon(0% 0%, 100% 0%, 100% calc(100% - 61px), 0% calc(100% - 61px));
+}
+
+  /*---------------------*/
+ /* FORMULARIO POWER BI */
+/*---------------------*/
+.PowerBI {
+  border: var(--formulario-power-bi-borda);
+  width: var(--formulario-power-bi-largura);
+  height: var(--formulario-power-bi-altura);
+  clip-path: var(--formulario-power-bi-esconder-rodape);
+}
+
+.CaixaDeBotaoComImagemEAnimacao {
+  top: var(--formulario-power-bi-botao-voltar-distancia);
+  left: var(--formulario-power-bi-botao-voltar-distancia);
+  z-index: var(--formulario-power-bi-botao-voltar-indice);
+  position: var(--formulario-power-bi-botao-voltar-posicao);
+}

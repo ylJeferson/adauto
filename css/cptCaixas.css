@@ -1,0 +1,604 @@
+  /*-----------*/
+ /* VARIAVEIS */
+/*-----------*/
+:root {
+  /* -------------------------------------------------- */
+
+  --caixa-de-imagem-altura-do-banner: 50px;
+  --caixa-de-imagem-largura-do-banner: auto;
+
+  --caixa-de-imagem-foto3x4-altura: 125px;
+  --caixa-de-imagem-foto3x4-largura: 95px;
+  --caixa-de-imagem-foto3x4-margens: auto;
+  --caixa-de-imagem-foto3x4-ajuste-de-foto: cover;
+  
+  /* -------------------------------------------------- */
+
+  --caixa-de-texto-altura: 45px;
+  --caixa-de-texto-largura: 100%;
+  --caixa-de-texto-preenchimento: 0 5px;
+  --caixa-de-texto-borda-tamanho-input: 2px;
+  --caixa-de-texto-label-posicao-topo: 13px; /* Modificar apenas caso Font-Size seja modificado */
+  --caixa-de-texto-label-posicao-topo-animacao: -15px;
+
+  /* -------------------------------------------------- */
+
+  --caixa-de-rotulo-altura: 50px;
+  --caixa-de-rotulo-largura: 100%;
+
+  /* -------------------------------------------------- */
+
+  --caixa-de-botao-borda: none;
+  --caixa-de-botao-tamanho: 60%;
+  --caixa-de-botao-largura: 100%;
+  --caixa-de-botao-cor: #FFFFFF;
+  --caixa-de-botao-cursor: pointer;
+  --caixa-de-botao-borda-curvatura: 12px;
+  --caixa-de-botao-preenchimento: 10px 16px;
+  --caixa-de-botao-cor-fundo-escurecimento: 15%;
+  --caixa-de-botao-espacamento-entre-letras: 2px;
+  --caixa-de-botao-cor-fundo-escurecimento-padrao: 100%;
+  --caixa-de-botao-cor-fundo: var(--kazzo-cor-logotipo);
+
+  /* -------------------------------------------------- */
+
+  --caixa-de-botao-com-imagem-e-animacao-tamanho: 80px;
+  --caixa-de-botao-com-imagem-e-animacao-tamanho-borda: 2px;
+  --caixa-de-botao-com-imagem-e-animacao-fundo-cor: #FFFFFF;
+  --caixa-de-botao-com-imagem-e-animacao-itens-cor: var(--kazzo-cor-logotipo);
+  --caixa-de-botao-com-imagem-e-animacao-cursor: var(--caixa-de-botao-cursor);
+  --caixa-de-botao-com-imagem-e-animacao-altura: var(--caixa-de-botao-com-imagem-e-animacao-tamanho);
+  --caixa-de-botao-com-imagem-e-animacao-largura: var(--caixa-de-botao-com-imagem-e-animacao-tamanho);
+  --caixa-de-botao-com-imagem-e-animacao-tamanho-fonte: var(--caixa-de-botao-com-imagem-e-animacao-tamanho);
+
+  --caixa-de-botao-com-imagem-e-animacao-botao-altura: 100%;
+  --caixa-de-botao-com-imagem-e-animacao-botao-largura: 100%;
+  --caixa-de-botao-com-imagem-e-animacao-borda-curvatura: 50%;
+
+  /* -------------------------------------------------- */
+
+  --caixa-de-botao-animado-linhas-altura: 15px;
+  --caixa-de-botao-animado-linhas-largura: 2px;
+  --caixa-de-botao-animado-linhas-opacidade: 0;
+
+  --caixa-de-botao-animado-rotate-0: 0deg;
+  --caixa-de-botao-animado-rotate-45: 45deg;
+  --caixa-de-botao-animado-rotate-90: 90deg;
+
+  --caixa-de-botao-animado-translate-0: 0px;
+  --caixa-de-botao-animado-translate-50: 4px;
+  --caixa-de-botao-animado-translate-100: 8px;
+
+  --caixa-de-botao-animado-scale-0: scaleY(0.5);
+  --caixa-de-botao-animado-scale-50: scaleY(1.4);
+  --caixa-de-botao-animado-scale-100: scaleY(0.5);
+
+  --caixa-de-botao-animado-opacidade-0: 0;
+  --caixa-de-botao-animado-opacidade-50: 1;
+  --caixa-de-botao-animado-opacidade-100: 0;
+}
+
+  /*--------*/
+ /* PADRAO */
+/*--------*/
+.hidden-cptCaixas {
+  display: none;
+}
+
+  /*-------------------*/
+ /* CAIXA DE MENSAGEM */
+/*-------------------*/
+.CaixaDeMensagem {
+  text-align: center;
+}
+
+  /*-----------------*/
+ /* CAIXA DE IMAGEM */
+/*-----------------*/
+.CaixaDeImagem {
+  width: var(--caixa-de-imagem-largura);
+  height: var(--caixa-de-imagem-altura);
+}
+
+.banner-cptCaixas {
+  width: var(--caixa-de-imagem-largura-do-banner);
+  height: var(--caixa-de-imagem-altura-do-banner);
+}
+
+.foto3x4-cptCaixas {
+  width: var(--caixa-de-imagem-foto3x4-largura);
+  height: var(--caixa-de-imagem-foto3x4-altura);
+  margin: var(--caixa-de-imagem-foto3x4-margens);
+  object-fit: var(--caixa-de-imagem-foto3x4-ajuste-de-foto);
+}
+
+  /*----------------*/
+ /* CAIXA DE TEXTO */
+/*----------------*/
+.CaixaDeTexto {
+  position: relative;
+
+  height: var(--caixa-de-texto-altura);
+  width: var(--caixa-de-texto-largura);
+  border-bottom: var(--caixa-de-texto-borda-tamanho-input) var(--tipo-de-borda) var(--kazzo-cor-texto);
+}
+
+.CaixaDeTexto::before {
+  left: 0;
+  width: 0;
+  content: "";
+  position: absolute;
+
+  background-color: var(--kazzo-cor-texto);
+  height: var(--caixa-de-texto-borda-tamanho-input);
+  bottom: calc(var(--caixa-de-texto-borda-tamanho-input) * -1);
+  transition: var(--transicao-tipo) var(--transicao-velocidade);
+  -o-transition: var(--transicao-tipo) var(--transicao-velocidade);
+  -moz-transition: var(--transicao-tipo) var(--transicao-velocidade);
+  -webkit-transition: var(--transicao-tipo) var(--transicao-velocidade);
+}
+
+.CaixaDeTexto:focus::before {
+  background-color: var(--kazzo-cor-logotipo);
+  width: var(--caixa-de-texto-largura);
+}
+
+.CaixaDeTexto .input-cptCaixas {
+  border: none;
+  outline: none;
+  display: block;
+
+  background: var(--cor-transparente);
+  color: var(--kazzo-cor-texto-escuro);
+  width: var(--caixa-de-texto-largura);
+  height: var(--caixa-de-texto-altura);
+  padding: var(--caixa-de-texto-preenchimento);
+}
+
+.CaixaDeTexto .span-cptCaixas {
+  position: absolute;
+  pointer-events: none;
+
+  color: var(--kazzo-cor-texto);
+  padding: var(--caixa-de-texto-preenchimento);
+  top: var(--caixa-de-texto-label-posicao-topo);
+  transition: var(--transicao-tipo) var(--transicao-velocidade);
+  -o-transition: var(--transicao-tipo) var(--transicao-velocidade);
+  -moz-transition: var(--transicao-tipo) var(--transicao-velocidade);
+  -webkit-transition: var(--transicao-tipo) var(--transicao-velocidade);
+}
+
+.CaixaDeTexto .span-cptCaixas::after {
+  content: attr(data-placeholder);
+}
+
+.CaixaDeTexto.ComTexto::before {
+  background-color: var(--kazzo-cor-logotipo);
+  width: var(--caixa-de-texto-largura);
+}
+
+.CaixaDeTexto .input-cptCaixas:focus + .span-cptCaixas,
+.CaixaDeTexto .input-cptCaixas:not(:placeholder-shown) + .span-cptCaixas {
+  top: var(--caixa-de-texto-label-posicao-topo-animacao);
+  transition: var(--transicao-tipo) var(--transicao-velocidade);
+  -o-transition: var(--transicao-tipo) var(--transicao-velocidade);
+  -moz-transition: var(--transicao-tipo) var(--transicao-velocidade);
+  -webkit-transition: var(--transicao-tipo) var(--transicao-velocidade);
+}
+
+  /*-----------------*/
+ /* CAIXA DE ROTULO */
+/*-----------------*/
+.CaixaDeRotulo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--kazzo-cor-logotipo);
+  width: var(--caixa-de-rotulo-largura);
+}
+
+  /*---------------------------*/
+ /* CAIXA DE CODIGO DE BARRAS */
+/*---------------------------*/
+.CaixaDeCodigoDeBarras {
+  text-align: center;
+}
+
+/* @CHARSET "UTF-8"; */
+.divCode {
+  float: left;
+  height: 45px;
+}
+
+.labelCode {
+  text-align: center;
+  font-size: small;
+}
+
+.bar1 {border-left: 1px solid black;}
+.bar2 {border-left: 2px solid black;}
+.bar3 {border-left: 3px solid black;}
+.bar4 {border-left: 4px solid black;}
+
+.space0 {margin-right: 0px;}
+.space1 {margin-right: 1px;}
+.space2 {margin-right: 2px;}
+.space3 {margin-right: 3px;}
+.space4 {margin-right: 4px;}
+
+  /*----------------*/
+ /* CAIXA DE BOTAO */
+/*----------------*/
+.CaixaDeBotao {
+  text-align: center;
+
+  width: var(--caixa-de-botao-largura);
+}
+
+.button-cptCaixas {
+  outline: none;
+
+  color: var(--caixa-de-botao-cor);
+  border: var(--caixa-de-botao-borda);
+  cursor: var(--caixa-de-botao-cursor);
+  width: var(--caixa-de-botao-tamanho);
+  padding: var(--caixa-de-botao-preenchimento);
+  border-radius: var(--caixa-de-botao-borda-curvatura);
+  background-color: var(--kazzo-cor-logotipo);
+  transition: var(--transicao-tipo) var(--transicao-velocidade);
+  filter: brightness(var(--caixa-de-botao-cor-fundo-escurecimento-padrao));
+}
+
+.button-cptCaixas:hover {
+  transition: var(--transicao-tipo) var(--transicao-velocidade);
+  filter: brightness(calc(var(--caixa-de-botao-cor-fundo-escurecimento-padrao) - var(--caixa-de-botao-cor-fundo-escurecimento)));
+}
+
+.button-cptCaixas:active {
+  transition: var(--transicao-tipo) var(--transicao-velocidade);
+  letter-spacing: var(--caixa-de-botao-espacamento-entre-letras);
+}
+
+.Clicado {animation: AumentarDiminuirBotao var(--transicao-velocidade) var(--transicao-funcao-de-tempo);}
+
+@keyframes AumentarDiminuirBotao {
+  0%{transform: scale(1);}
+  50%{transform: scale(1.1);}
+  100%{transform: scale(1);}
+}
+
+  /*-----------------------------*/
+ /* CAIXA DE BOTAO GIRAR CRACHA */
+/*-----------------------------*/
+.btnGirarCracha {
+  border: none;
+  cursor: pointer;
+
+  color: var(--kazzo-cor-texto);
+  background-color: var(--formulario-lista-bi-cor-fundo);
+  transition: var(--transicao-tipo) var(--transicao-velocidade) var(--transicao-funcao-de-tempo);
+}
+
+.btnGirarCracha:hover {
+  transform: rotate(-360deg);
+}
+
+.btnGirarCracha::before {
+  content: "\21BB";
+}
+
+  /*-------------------------*/
+ /* CAIXA DE BOTAO COM LINK */
+/*-------------------------*/
+.CaixaDeBotaoComLink {
+  text-align: center;
+
+  width: var(--caixa-de-botao-largura);
+}
+
+  /*---------------------------*/
+ /* CAIXA DE BOTAO COM IMAGEM */
+/*---------------------------*/
+.CaixaDeBotaoComImagemEAnimacao {
+  cursor: var(--caixa-de-botao-com-imagem-e-animacao-cursor);
+  height: var(--caixa-de-botao-com-imagem-e-animacao-altura);
+  width: var(--caixa-de-botao-com-imagem-e-animacao-largura);
+  background-color: var(--caixa-de-botao-com-imagem-e-animacao-fundo-cor);
+  border-radius: var(--caixa-de-botao-com-imagem-e-animacao-borda-curvatura);
+}
+
+.btnComImagemEAnimacao {
+  width: var(--caixa-de-botao-com-imagem-e-animacao-botao-largura);
+  height: var(--caixa-de-botao-com-imagem-e-animacao-botao-altura);
+  border-radius: var(--caixa-de-botao-com-imagem-e-animacao-borda-curvatura);
+}
+
+.btnComImagemEAnimacao::before,
+.btnComImagemEAnimacao::after {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: var(--caixa-de-botao-com-imagem-e-animacao-botao-largura);
+  height: var(--caixa-de-botao-com-imagem-e-animacao-botao-altura);
+  border-radius: var(--caixa-de-botao-com-imagem-e-animacao-borda-curvatura);
+  transition: var(--transicao-tipo) var(--transicao-velocidade) var(--transicao-funcao-de-tempo);
+}
+
+/* Desktop grande */
+@media (max-width: 1000px) {
+  :root {
+    --caixa-de-botao-com-imagem-e-animacao-tamanho: 40px;
+  }
+}
+
+  /*----------*/
+ /* ANIMACAO */
+/*----------*/
+.LuaCrescente::before {
+  top: -1px;
+  left: -1px;
+  position: absolute;
+
+  color: var(--caixa-de-botao-com-imagem-e-animacao-itens-cor);
+  width: calc(var(--caixa-de-botao-com-imagem-e-animacao-tamanho) * 83 / 100);
+  height: calc(var(--caixa-de-botao-com-imagem-e-animacao-tamanho) * 83 / 100);
+  box-shadow: inset 0 0 0 calc(var(--caixa-de-botao-com-imagem-e-animacao-tamanho) * 83 / 100) var(--caixa-de-botao-com-imagem-e-animacao-fundo-cor);
+}
+.LuaCrescente:hover::before {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  color: var(--caixa-de-botao-com-imagem-e-animacao-fundo-cor);
+  box-shadow: inset 0 0 0 0 var(--caixa-de-botao-com-imagem-e-animacao-fundo-cor);
+}
+
+.BordaParaOCentro::before {
+  color: var(--caixa-de-botao-com-imagem-e-animacao-itens-cor);
+  box-shadow: inset 0 0 0 var(--caixa-de-botao-com-imagem-e-animacao-tamanho-borda) var(--caixa-de-botao-com-imagem-e-animacao-itens-cor);
+}
+.BordaParaOCentro:hover::before {
+  color: var(--caixa-de-botao-com-imagem-e-animacao-fundo-cor);
+  box-shadow: inset 0 0 0 var(--caixa-de-botao-com-imagem-e-animacao-altura) var(--caixa-de-botao-com-imagem-e-animacao-itens-cor);
+}
+
+.CentroParaABorda::before {
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+
+  color: var(--caixa-de-botao-com-imagem-e-animacao-itens-cor);
+  height: calc(var(--caixa-de-botao-com-imagem-e-animacao-altura) - calc(var(--caixa-de-botao-com-imagem-e-animacao-tamanho-borda) * 2));
+  width: calc(var(--caixa-de-botao-com-imagem-e-animacao-largura) - calc(var(--caixa-de-botao-com-imagem-e-animacao-tamanho-borda) * 2));
+  box-shadow: inset  0 0 0 calc(var(--caixa-de-botao-com-imagem-e-animacao-tamanho) - calc(var(--caixa-de-botao-com-imagem-e-animacao-tamanho-borda) * 2)) var(--caixa-de-botao-com-imagem-e-animacao-fundo-cor);
+}
+.CentroParaABorda:hover::before {
+  color: var(--caixa-de-botao-com-imagem-e-animacao-fundo-cor);
+  box-shadow: inset 0 0 0 0 var(--caixa-de-botao-com-imagem-e-animacao-fundo-cor);
+}
+
+  /*------------------------*/
+ /* CAIXA DE BOTAO ANIMADO */
+/*------------------------*/
+.CaixaDeBotaoAnimado {
+  text-align: center;
+
+  width: var(--caixa-de-botao-largura);
+}
+
+.spnLinhasAnimadas span {
+  content:"";
+  margin: auto;
+  position: absolute;
+
+  background: var(--kazzo-cor-logotipo);
+  height: var(--caixa-de-botao-animado-linhas-altura);
+  width: var(--caixa-de-botao-animado-linhas-largura);
+  opacity: var(--caixa-de-botao-animado-linhas-opacidade);
+}
+
+.spnLinhasAnimadas span:nth-of-type(1) {
+  top: -20px;
+  right: 0;
+  left: 0;
+
+
+  transform: rotate(calc(var(--caixa-de-botao-animado-rotate-0) * 1));
+}
+
+.spnLinhasAnimadas span:nth-of-type(2) {
+  top: -20px;
+  right: -70%;
+  left: 0;
+
+
+  transform: rotate(calc(var(--caixa-de-botao-animado-rotate-45) * 1));
+}
+
+.spnLinhasAnimadas span:nth-of-type(3) {
+  top:0;
+  right: -10px;
+
+  bottom: 0;
+
+  transform: rotate(calc(var(--caixa-de-botao-animado-rotate-90) * 1))
+}
+
+.spnLinhasAnimadas span:nth-of-type(4) {
+
+  right: -70%;
+  left: 0;
+  bottom: -20px;
+
+  transform: rotate(calc(var(--caixa-de-botao-animado-rotate-45) * -1))
+}
+
+.spnLinhasAnimadas span:nth-of-type(5) {
+
+  right: 0;
+  left: 0;
+  bottom: -20px;
+
+  transform: rotate(calc(var(--caixa-de-botao-animado-rotate-0) * 1))
+}
+
+.spnLinhasAnimadas span:nth-of-type(6) {
+
+  right: 0;
+  left: -70%;
+  bottom: -20px;
+
+  transform: rotate(calc(var(--caixa-de-botao-animado-rotate-45) * 1))
+}
+
+.spnLinhasAnimadas span:nth-of-type(7) {
+  top:0;
+
+  left: -10px;
+  bottom: 0;
+
+  transform: rotate(calc(var(--caixa-de-botao-animado-rotate-90) * 1));
+}
+
+.spnLinhasAnimadas span:nth-of-type(8) {
+  top: -20px;
+  right: 0;
+  left: -70%;
+
+  transform: rotate(calc(var(--caixa-de-botao-animado-rotate-45) * -1))
+}
+
+  /*----------*/
+ /* ANIMACAO */
+/*----------*/
+.Clicado span span{animation-duration: var(--transicao-velocidade); animation-timing-function:  var(--transicao-funcao-de-tempo);}
+.Clicado span span:nth-of-type(1) {animation-name: animacao1;}
+.Clicado span span:nth-of-type(2) {animation-name: animacao2;}
+.Clicado span span:nth-of-type(3) {animation-name: animacao3;}
+.Clicado span span:nth-of-type(4) {animation-name: animacao4;}
+.Clicado span span:nth-of-type(5) {animation-name: animacao5;}
+.Clicado span span:nth-of-type(6) {animation-name: animacao6;}
+.Clicado span span:nth-of-type(7) {animation-name: animacao7;}
+.Clicado span span:nth-of-type(8) {animation-name: animacao8;}
+
+@keyframes animacao1 {
+  0%{transform: rotate(calc(var(--caixa-de-botao-animado-rotate-0) * 1)) translateY(calc(var(--caixa-de-botao-animado-translate-0) * -1)) var(--caixa-de-botao-animado-scale-0); opacity: var(--caixa-de-botao-animado-opacidade-0);}
+  50%{transform: rotate(calc(var(--caixa-de-botao-animado-rotate-0) * 1)) translateY(calc(var(--caixa-de-botao-animado-translate-50) * -1)) var(--caixa-de-botao-animado-scale-50); opacity: var(--caixa-de-botao-animado-opacidade-50);}
+  100%{transform: rotate(calc(var(--caixa-de-botao-animado-rotate-0) * 1)) translateY(calc(var(--caixa-de-botao-animado-translate-100) * -1)) var(--caixa-de-botao-animado-scale-100); opacity: var(--caixa-de-botao-animado-opacidade-100);}
+}
+
+@keyframes animacao2 {
+  0%{transform: rotate(calc(var(--caixa-de-botao-animado-rotate-45) * 1)) translateY(calc(var(--caixa-de-botao-animado-translate-0) * -1)) var(--caixa-de-botao-animado-scale-0); opacity: var(--caixa-de-botao-animado-opacidade-0);}
+  50%{transform: rotate(calc(var(--caixa-de-botao-animado-rotate-45) * 1)) translateY(calc(var(--caixa-de-botao-animado-translate-50) * -1)) var(--caixa-de-botao-animado-scale-50); opacity: var(--caixa-de-botao-animado-opacidade-50);}
+  100%{transform: rotate(calc(var(--caixa-de-botao-animado-rotate-45) * 1)) translateY(calc(var(--caixa-de-botao-animado-translate-100) * -1)) var(--caixa-de-botao-animado-scale-100); opacity: var(--caixa-de-botao-animado-opacidade-100);}
+}
+
+@keyframes animacao3 {
+  0%{transform: rotate(calc(var(--caixa-de-botao-animado-rotate-90) * 1)) translateY(calc(var(--caixa-de-botao-animado-translate-0) * -1)) var(--caixa-de-botao-animado-scale-0); opacity: var(--caixa-de-botao-animado-opacidade-0);}
+  50%{transform: rotate(calc(var(--caixa-de-botao-animado-rotate-90) * 1)) translateY(calc(var(--caixa-de-botao-animado-translate-50) * -1)) var(--caixa-de-botao-animado-scale-50); opacity: var(--caixa-de-botao-animado-opacidade-50);}
+  100%{transform: rotate(calc(var(--caixa-de-botao-animado-rotate-90) * 1)) translateY(calc(var(--caixa-de-botao-animado-translate-100) * -1)) var(--caixa-de-botao-animado-scale-100); opacity: var(--caixa-de-botao-animado-opacidade-100);}
+}
+
+@keyframes animacao4 {
+  0%{transform: rotate(calc(var(--caixa-de-botao-animado-rotate-45) * -1)) translateY(calc(var(--caixa-de-botao-animado-translate-0) * 1)) var(--caixa-de-botao-animado-scale-0); opacity: var(--caixa-de-botao-animado-opacidade-0);}
+  50%{transform: rotate(calc(var(--caixa-de-botao-animado-rotate-45) * -1)) translateY(calc(var(--caixa-de-botao-animado-translate-50) * 1)) var(--caixa-de-botao-animado-scale-50); opacity: var(--caixa-de-botao-animado-opacidade-50);}
+  100%{transform: rotate(calc(var(--caixa-de-botao-animado-rotate-45) * -1)) translateY(calc(var(--caixa-de-botao-animado-translate-100) * 1)) var(--caixa-de-botao-animado-scale-100); opacity: var(--caixa-de-botao-animado-opacidade-100);}
+}
+
+@keyframes animacao5 {
+  0%{transform: rotate(calc(var(--caixa-de-botao-animado-rotate-0) * 1)) translateY(calc(var(--caixa-de-botao-animado-translate-0) * 1)) var(--caixa-de-botao-animado-scale-0); opacity: var(--caixa-de-botao-animado-opacidade-0);}
+  50%{transform: rotate(calc(var(--caixa-de-botao-animado-rotate-0) * 1)) translateY(calc(var(--caixa-de-botao-animado-translate-50) * 1)) var(--caixa-de-botao-animado-scale-50); opacity: var(--caixa-de-botao-animado-opacidade-50);}
+  100%{transform: rotate(calc(var(--caixa-de-botao-animado-rotate-0) * 1)) translateY(calc(var(--caixa-de-botao-animado-translate-100) * 1)) var(--caixa-de-botao-animado-scale-100); opacity: var(--caixa-de-botao-animado-opacidade-100);}
+}
+
+@keyframes animacao6 {
+  0%{transform: rotate(calc(var(--caixa-de-botao-animado-rotate-45) * 1)) translateY(calc(var(--caixa-de-botao-animado-translate-0) * 1)) var(--caixa-de-botao-animado-scale-0); opacity: var(--caixa-de-botao-animado-opacidade-0);}
+  50%{transform: rotate(calc(var(--caixa-de-botao-animado-rotate-45) * 1)) translateY(calc(var(--caixa-de-botao-animado-translate-50) * 1)) var(--caixa-de-botao-animado-scale-50); opacity: var(--caixa-de-botao-animado-opacidade-50);}
+  100%{transform: rotate(calc(var(--caixa-de-botao-animado-rotate-45) * 1)) translateY(calc(var(--caixa-de-botao-animado-translate-100) * 1)) var(--caixa-de-botao-animado-scale-100); opacity: var(--caixa-de-botao-animado-opacidade-100);}
+}
+
+@keyframes animacao7 {
+  0%{transform: rotate(calc(var(--caixa-de-botao-animado-rotate-90) * 1)) translateY(calc(var(--caixa-de-botao-animado-translate-0) * 1)) var(--caixa-de-botao-animado-scale-0); opacity: var(--caixa-de-botao-animado-opacidade-0);}
+  50%{transform: rotate(calc(var(--caixa-de-botao-animado-rotate-90) * 1)) translateY(calc(var(--caixa-de-botao-animado-translate-50) * 1)) var(--caixa-de-botao-animado-scale-50); opacity: var(--caixa-de-botao-animado-opacidade-50);}
+  100%{transform: rotate(calc(var(--caixa-de-botao-animado-rotate-90) * 1)) translateY(calc(var(--caixa-de-botao-animado-translate-100) * 1)) var(--caixa-de-botao-animado-scale-100); opacity: var(--caixa-de-botao-animado-opacidade-100);}
+}
+
+@keyframes animacao8 {
+  0%{transform: rotate(calc(var(--caixa-de-botao-animado-rotate-45) * -1)) translateY(calc(var(--caixa-de-botao-animado-translate-0) * -1)) var(--caixa-de-botao-animado-scale-0); opacity: var(--caixa-de-botao-animado-opacidade-0);}
+  50%{transform: rotate(calc(var(--caixa-de-botao-animado-rotate-45) * -1)) translateY(calc(var(--caixa-de-botao-animado-translate-50) * -1)) var(--caixa-de-botao-animado-scale-50); opacity: var(--caixa-de-botao-animado-opacidade-50);}
+  100%{transform: rotate(calc(var(--caixa-de-botao-animado-rotate-45) * -1)) translateY(calc(var(--caixa-de-botao-animado-translate-100) * -1)) var(--caixa-de-botao-animado-scale-100); opacity: var(--caixa-de-botao-animado-opacidade-100);}
+}
+
+/* 			
+  <div class="CaixaDeImagem">
+    <img src="brand.png" class="banner-cptCaixas"/>
+  </div>
+
+  --------------------------------------------------
+  <div class="CaixaDeImagem">
+    <img src="<?= $foto ?>" class="foto3x4-cptCaixas"/>
+  </div>
+
+  --------------------------------------------------
+
+	<div class="CaixaDeTexto">
+    <input type="text" class="input-cptCaixas" placeholder="" name="">
+    <span class="span-cptCaixas" data-placeholder="label"></span>
+  </div>
+
+  --------------------------------------------------
+
+  <div class="CaixaDeRotulo">
+    <label for="nome"></label>
+  </div>
+
+  --------------------------------------------------
+
+  <script>
+    var barCode = code128('622370', '273', 'A');
+    window.document.write(barCode);
+  </script>
+
+  --------------------------------------------------
+
+  <div class="CaixaDeBotaoAnimado">
+    <button type="submit" class="button-cptCaixas btnLinhasAnimadas" name="redirecionamento" value="">
+      Logout
+      <span class="spnLinhasAnimadas">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+    </button>
+  </div>
+
+  --------------------------------------------------
+
+  <div class="CaixaDeBotaoComLink">
+    <button type="submit" class="button-cptCaixas" name="redirecionamento" value="">Botao</button>
+  </div>
+
+  --------------------------------------------------
+
+  <div class="CaixaDeBotaoAtualizar">
+    <button type="button" class="btnGirarCracha"></button>
+  </div>
+
+  cptCaixas.js
+
+  --------------------------------------------------
+
+  (ANIMACAO) - LuaCrescente, BordaParaOCentro e CentroParaABorda
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <div class="CaixaDeBotaoComImagemEAnimacao TT">
+    <i class="fa fa-arrow-left fa-2x btnComImagemEAnimacao (ANIMACAO)" aria-hidden="true" onclick="window.location.reload()"></i>
+  </div>
+*/

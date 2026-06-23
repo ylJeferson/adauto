@@ -1,0 +1,96 @@
+  /*-----------*/
+ /* VARIAVEIS */
+/*-----------*/
+:root {
+  --formulario-login-media-screen-largura-600px: 90%;
+
+  --formulario-login-altura: 450px;
+  --formulario-login-largura: 300px;
+  --formulario-login-borda-tamanho: 1px;
+  --formulario-login-cor-fundo: #FFFFFF;
+  --formulario-login-preenchimento: 20px;
+  --formulario-login-borda-cor:#F2F2F2;
+  --formulario-login-borda-curvatura: 12px;
+
+  --formulario-login-mensagem-de-erro-cor: red;
+  --formulario-login-mensagem-de-erro-tamanho: 12px;
+  --formulario-login-mensagem-de-erro-posicao: right;
+  --formulario-login-mensagem-de-erro-margens: 5px 0 0 0;
+
+  --formulario-login-caixa-de-imagem-margens: 40px 5px 15px 0;
+
+  --formulario-login-caixa-de-recaptcha-altura: 80px;
+  --formulario-login-caixa-de-recaptcha-margens: 0 0 20px 0;
+  --formulario-login-caixa-de-recaptcha-recaptcha-tamanho: scale(0.77);
+
+  --formulario-login-caixa-de-texto-margens: auto 0 35px 0;
+
+  --formulario-login-caixa-de-botao-margens: auto;
+}
+
+  /*------------------*/
+ /* FORMULARIO LOGIN */
+/*------------------*/
+.ContainerLogin {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  box-shadow: var(--sombra);
+  height: var(--formulario-login-altura);
+  width: var(--formulario-login-largura);
+  padding: var(--formulario-login-preenchimento);
+  background-color: var(--formulario-login-cor-fundo);
+  border-radius: var(--formulario-login-borda-curvatura);
+  border: var(--formulario-login-borda-tamanho) var(--tipo-de-borda) var(--formulario-login-borda-cor);
+}
+
+.erro-pgLogin {
+  color: var(--formulario-login-mensagem-de-erro-cor);
+  margin: var(--formulario-login-mensagem-de-erro-margens);
+  font-size: var(--formulario-login-mensagem-de-erro-tamanho);
+  text-align: var(--formulario-login-mensagem-de-erro-posicao);
+}
+
+  /*-----------------*/
+ /* CAIXA DE IMAGEM */
+/*-----------------*/
+.CaixaDeImagem {
+  margin: var(--formulario-login-caixa-de-imagem-margens);
+}
+
+.ComCaptcha {
+  margin: var(--formulario-login-caixa-de-imagem-margens-com-captcha);
+}
+
+  /*----------------*/
+ /* CAIXA DE TEXTO */
+/*----------------*/
+.CaixaDeTexto {
+  margin: var(--formulario-login-caixa-de-texto-margens);
+}
+
+  /*------------------------*/
+ /* CAIXA DE BOTAO ANIMADO */
+/*------------------------*/
+.CaixaDeBotaoAnimado {
+  margin-top: var(--formulario-login-caixa-de-botao-margens);
+}
+
+.CaixaDeRecaptcha {
+  height: var(--formulario-login-caixa-de-recaptcha-altura);
+  margin: var(--formulario-login-caixa-de-recaptcha-margens);
+}
+
+.g-recaptcha {
+  transform: var(--formulario-login-caixa-de-recaptcha-recaptcha-tamanho)
+}
+
+  /*----------------*/
+ /* REPSONSIVIDADE */
+/*----------------*/
+/*
+@media only screen and (max-width: 644px) {
+
+}
+*/
