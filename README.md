@@ -1,4 +1,8 @@
-# adauto
+<p align="center">
+  <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo" width="150">
+</p>
+
+<h1 align="center">Adauto</h1>
 
 Aplicacao PHP simples para login via LDAP e listagem de grupos/permissoes.
 
