@@ -4,14 +4,9 @@
 
 <h1 align="center">Adauto</h1>
 
-Aplicacao PHP simples para login via LDAP e listagem de grupos/permissoes.
+---
 
-## Diretrizes do projeto
-
-- Seja extremamente conciso e foque apenas na resolucao do problema. Responda diretamente com codigo, comando ou solucao necessaria, evitando rodeios, saudacoes formais e explicacoes longas, salvo quando solicitado.
-- O arquivo README deve ser nomeado totalmente em letras minusculas: `readme.md`.
-- O `readme.md` deve documentar a estrutura do projeto, seu funcionamento e todas as diretrizes aplicaveis ao projeto.
-- Toda nova diretriz definida durante a conversa deve ser registrada no `readme.md` antes de qualquer implementacao relacionada.
+Aplicacao PHP para login via LDAP e listagem de grupos e permissoes.
 
 ## Estrutura
 
